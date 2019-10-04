@@ -31,8 +31,8 @@ public class ProblemSet3 {
         // ps.sign();          // executes Exercise 1
         // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-        // ps.grade();         // executes Exercise 5
+        // ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
         // ps.state();         // executes Exercise 8
@@ -155,7 +155,39 @@ public class ProblemSet3 {
      */
 
     public void grade() {
+		System.out.print("\nEnter a grade: ");
+		double grade = in.nextDouble();
 
+		final boolean aboveInvalid = (grade > 100);
+		final boolean belowInvalid = (grade < 0);
+		final boolean A = (100 >= grade && grade >= 90);
+		final boolean B = (89 >= grade && grade >= 80);
+		final boolean C = (79 >= grade && grade >= 70);
+		final boolean D = (69 >= grade && grade >= 60 );
+		final boolean F = (59 >= grade && grade >= 0 );
+
+		if (aboveInvalid) {
+		    // Grade is invalid.
+			System.out.println("\nGrades above 100 are invalid.");
+		} else if (belowInvalid) {
+			// Grade is invalid.
+			System.out.println("\nGrades below 0 are invalid.");
+		} else if (A) {
+		    // Grade is an A
+			System.out.println("\nYou recieved an A.");
+		} else if (B) {
+		    // Grade is a B
+			System.out.println("\nYou recieved a B.");
+		} else if (C) {
+		    // Grade is a C
+			System.out.println("\nYou recieved a C.");
+		} else if (D) {
+		    // Grade is a D
+			System.out.println("\nYou recieved a D.");
+		} else if (F) {
+		    // Grade is an F
+			System.out.println("\nYou recieved an F.");
+		}
     }
 
     /*
