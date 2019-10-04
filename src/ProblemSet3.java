@@ -30,8 +30,8 @@ public class ProblemSet3 {
 
         // ps.sign();          // executes Exercise 1
         // ps.parity();        // executes Exercise 2
-        ps.ordered();       // executes Exercise 3
-        // ps.gpa();           // executes Exercise 4
+        // ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
@@ -123,7 +123,29 @@ public class ProblemSet3 {
      */
 
     public void gpa() {
+		final double A = 4.00;
+		final double B = 3.00;
+		final double C = 2.00;
+		final double D = 1.00;
+		final double F = 0.00;
 
+		System.out.print("\nEnter a letter grade: ");
+		String letterGrade = in.next().toUpperCase();
+
+		// CASE INSENSITVE
+		// MAX GPA IS 4.00
+
+		// if letter != A, B, C, D, F
+		// That's not a valid letter grade.
+
+
+		// if letter contains +
+		// add 0.33
+
+		// if letter contains -
+		// subtract 0.33
+
+		// NO F+ OR F-
     }
 
     /*
