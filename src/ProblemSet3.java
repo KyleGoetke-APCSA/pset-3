@@ -29,8 +29,8 @@ public class ProblemSet3 {
         // comment out or uncomment as needed
 
         // ps.sign();          // executes Exercise 1
-        ps.parity();        // executes Exercise 2
-        // ps.ordered();       // executes Exercise 3
+        // ps.parity();        // executes Exercise 2
+        ps.ordered();       // executes Exercise 3
         // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
@@ -81,6 +81,38 @@ public class ProblemSet3 {
      */
 
     public void ordered() {
+		System.out.print("\nEnter three integers.\n");
+		System.out.print("\nEnter integer: ");
+		int firstInteger = in.nextInt();
+		System.out.print("Enter integer: ");
+		int secondInteger = in.nextInt();
+		System.out.print("Enter integer: ");
+		int thirdInteger = in.nextInt();
+
+		boolean equivalent = (firstInteger == secondInteger && secondInteger == thirdInteger);
+		boolean strictlyIncreasing = (firstInteger < secondInteger && secondInteger < thirdInteger);
+		boolean increasing = (firstInteger <= secondInteger && secondInteger <= thirdInteger);
+		boolean strictlyDecreasing = (firstInteger > secondInteger && secondInteger > thirdInteger);
+		boolean decreasing = (firstInteger >= secondInteger && secondInteger >= thirdInteger);
+
+		if (equivalent) {
+			// Equivalent, where all integers are the same.
+			System.out.println("\nEquivalent.");
+		} else if (strictlyIncreasing) {
+		    // Strictly increasing, where each integer is greater than the previous.
+			System.out.println("\nStrictly increasing.");
+		} else if (increasing) {
+		    // Increasing, where each integer is greater than or equal to the previous.
+			System.out.println("\nIncreasing.");
+		} else if (strictlyDecreasing) {
+			// Strictly decreasing, where each integer is less than the previous.
+			System.out.println("\nStrictly decreasing.");
+		} else if (decreasing) {
+		    // Decreasing, where each integer is less than or equal to the previous.
+			System.out.println("\nDecreasing.");
+		} else {
+		    System.out.println("\nUnordered.");
+		}
 
     }
 
