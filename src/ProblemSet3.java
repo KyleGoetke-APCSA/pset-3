@@ -28,8 +28,8 @@ public class ProblemSet3 {
 
         // comment out or uncomment as needed
 
-        ps.sign();          // executes Exercise 1
-        // ps.parity();        // executes Exercise 2
+        // ps.sign();          // executes Exercise 1
+        ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
         // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
@@ -65,7 +65,13 @@ public class ProblemSet3 {
      */
 
     public void parity() {
-
+		System.out.print("\nEnter an integer: ");
+        int integer = in.nextInt();
+		if (integer % 2 == 0) {
+		    System.out.println("\nEven.");
+		} else {
+		    System.out.println("\nOdd.");
+		}
     }
 
     /*
