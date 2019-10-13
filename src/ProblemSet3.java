@@ -1,4 +1,4 @@
-/**
+/*
  * Problem Set 3.
  *
  * It's time to put your skills to the test. This problem set focuses on using
@@ -123,30 +123,65 @@ public class ProblemSet3 {
      */
 
     public void gpa() {
-		final double A = 4.00;
-		final double B = 3.00;
-		final double C = 2.00;
-		final double D = 1.00;
-		final double F = 0.00;
+		final double A_VALUE = 4.00;
+		final double B_VALUE = 3.00;
+		final double C_VALUE = 2.00;
+		final double D_VALUE = 1.00;
+		final double F_VALUE = 0.00;
+		final double PLUS_VALUE = 0.33;
+		final double MINUS_VALUE = -0.33;
+		double gpa = 0;
 
 		System.out.print("\nEnter a letter grade: ");
-		String letterGrade = in.next().toUpperCase();
+		String letterGrade = in.nextLine().toUpperCase();
 
-		// CASE INSENSITVE
-		// MAX GPA IS 4.00
-
-		// if letter != A, B, C, D, F
-		// That's not a valid letter grade.
-
-
-		// if letter contains +
-		// add 0.33
-
-		// if letter contains -
-		// subtract 0.33
-
-		// NO F+ OR F-
-    }
+		if (letterGrade.equals("A") || letterGrade.equals("A+")) {
+			gpa += A_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("A-")) {
+			gpa += B_VALUE;
+			gpa += MINUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("B+")) {
+			gpa += B_VALUE;
+			gpa += PLUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("B")) {
+			gpa += B_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("B-")) {
+			gpa += B_VALUE;
+			gpa += MINUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("C+")) {
+			gpa += C_VALUE;
+			gpa += PLUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("C")) {
+			gpa += C_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("C-")) {
+			gpa += C_VALUE;
+			gpa += MINUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("D+")) {
+			gpa += D_VALUE;
+			gpa += PLUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("D")) {
+			gpa += D_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("D-")) {
+			gpa += D_VALUE;
+			gpa += MINUS_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else if (letterGrade.equals("F")) {
+			gpa += F_VALUE;
+			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+		} else {
+			System.out.println("\nThat's not a valid letter grade.\n");
+		}
+	}
 
     /*
      * Exercise 5.
@@ -161,10 +196,10 @@ public class ProblemSet3 {
 		final boolean aboveInvalid = (grade > 100);
 		final boolean belowInvalid = (grade < 0);
 		final boolean A = (100 >= grade && grade >= 90);
-		final boolean B = (89 >= grade && grade >= 80);
-		final boolean C = (79 >= grade && grade >= 70);
-		final boolean D = (69 >= grade && grade >= 60 );
-		final boolean F = (59 >= grade && grade >= 0 );
+		final boolean B = (90 > grade && grade >= 80);
+		final boolean C = (80 > grade && grade >= 70);
+		final boolean D = (70 > grade && grade >= 60);
+		final boolean F = (60 > grade && grade >= 0);
 
 		if (aboveInvalid) {
 		    // Grade is invalid.
