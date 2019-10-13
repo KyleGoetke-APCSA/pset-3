@@ -28,16 +28,16 @@ public class ProblemSet3 {
 
         // comment out or uncomment as needed
 
-        // ps.sign();          // executes Exercise 1
-        // ps.parity();        // executes Exercise 2
-        // ps.ordered();       // executes Exercise 3
-        // ps.gpa();           // executes Exercise 4
-        // ps.grade();         // executes Exercise 5
-        // ps.cards();         // executes Exercise 6
-        // ps.leapYear();      // executes Exercise 7
+        ps.sign();          // executes Exercise 1
+        ps.parity();        // executes Exercise 2
+        ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
+        ps.cards();         // executes Exercise 6
+        ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
-        // ps.months();        // executes Exercise 9
-        // ps.salary();        // executes Exercise 10
+        ps.months();        // executes Exercise 9
+        ps.salary();        // executes Exercise 10
 
         in.close();
     }
@@ -335,7 +335,7 @@ public class ProblemSet3 {
 		if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
 			System.out.println("\n" + year + " is a leap year.");
 		} else {
-			System.out.println("\n" + year + " is not a leap year.\n");
+			System.out.println("\n" + year + " is not a leap year.");
 		}
     }
 
@@ -356,7 +356,7 @@ public class ProblemSet3 {
 		double temperature = in.nextDouble();
 		System.out.print("Enter a scale: ");
 		in.nextLine();
-		String tempuratureScale = in.nextLine();
+		String tempuratureScale = in.nextLine().toUpperCase();
 
 		if (!(tempuratureScale.equals("C")) && !(tempuratureScale.equals("F"))) {
 			System.out.println("\nThat's not a valid scale.");
@@ -364,21 +364,21 @@ public class ProblemSet3 {
 
 		if (tempuratureScale.equals("F")) {
 			if (temperature >= F_BOILING_POINT) {
-				System.out.println("\nGas.\n");
+				System.out.println("\nGas.");
 			} else if (temperature <= F_FREEZING_POINT) {
-				System.out.println("\nSolid.\n");
+				System.out.println("\nSolid.");
 			} else if (temperature < F_BOILING_POINT && temperature > F_FREEZING_POINT) {
-				System.out.println("\nLiquid.\n");
+				System.out.println("\nLiquid.");
 			}
 		}
 
 		if (tempuratureScale.equals("C")) {
 			if (temperature >= C_BOILING_POINT) {
-				System.out.println("\nGas.\n");
+				System.out.println("\nGas.");
 			} else if (temperature <= C_FREEZING_POINT) {
-				System.out.println("\nSolid.\n");
+				System.out.println("\nSolid.");
 			} else if (temperature < C_BOILING_POINT && temperature > C_FREEZING_POINT) {
-				System.out.println("\nLiquid.\n");
+				System.out.println("\nLiquid.");
 			}
 		}
 	}
@@ -390,7 +390,70 @@ public class ProblemSet3 {
      */
 
     public void months() {
+		System.out.print("\nEnter a month: ");
+        String month = in.nextLine().toUpperCase();
 
+		switch (month) {
+			case "JANUARY":
+			case "JANU":
+			case "JAN":
+				System.out.println("\n31 days.");
+				break;
+			case "FEBRUARY":
+			case "FEBR":
+			case "FEB":
+				System.out.println("\n28 or 29 days.");
+            	break;
+			case "MARCH":
+			case "MARC":
+			case "MAR":
+				System.out.println("\n31 days.");
+				break;
+			case "APRIL":
+			case "APRI":
+			case "APR":
+				System.out.println("\n30 days.");
+				break;
+			case "MAY":
+				System.out.println("\n31 days.");
+				break;
+			case "JUNE":
+			case "JUN":
+				System.out.println("\n30 days.");
+	            break;
+			case "JULY":
+			case "JUL":
+	            System.out.println("\n31 days.");
+	            break;
+			case "AUGUST":
+			case "AUGU":
+			case "AUG":
+	            System.out.println("\n31 days.");
+	            break;
+			case "SEPTEMBER":
+			case "SEPT":
+			case "SEP":
+	            System.out.println("\n30 days.");
+	            break;
+			case "OCTOBER":
+			case "OCTO":
+			case "OCT":
+	            System.out.println("\n31 days.");
+	            break;
+			case "NOVEMBER":
+			case "NOVE":
+			case "NOV":
+	            System.out.println("\n30 days.");
+	            break;
+			case "DECEMBER":
+			case "DECE":
+			case "DEC":
+	            System.out.println("\n31 days.");
+	            break;
+			default:
+	            System.out.println("\nThat's not a valid month.");
+	            break;
+		}
     }
 
     /*
@@ -399,7 +462,31 @@ public class ProblemSet3 {
      * Prompt the user to enter a wage and hours worked. How much money will be made?
      */
 
-    public void salary() {
+	 public void salary() {
+         final double OT_THRESHOLD = 40;
+         final double OT_PAY_MULTIPLIER = 1.5;
+		 double pay;
+         double overtimeHours;
 
-    }
+         System.out.print("\nWage: ");
+         double wage = in.nextDouble();
+         System.out.print("Hours: ");
+         double hours = in.nextDouble();
+
+		 if (wage < 0.00) {
+             System.out.println("Your wage must be greater than or equal to $0.00/hour.");
+         }
+         if (hours < 0.0) {
+             System.out.println("Your hours must be greater than or equal to 0.0.");
+         }
+
+         if (hours > OT_THRESHOLD) {
+             overtimeHours = hours - OT_THRESHOLD;
+             pay = 40 * wage + overtimeHours * OT_PAY_MULTIPLIER * wage;
+             System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
+         } else {
+             pay = hours * wage;
+             System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
+         }
+     }
 }
