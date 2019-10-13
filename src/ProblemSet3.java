@@ -34,8 +34,8 @@ public class ProblemSet3 {
         // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
         // ps.cards();         // executes Exercise 6
-        ps.leapYear();      // executes Exercise 7
-        // ps.state();         // executes Exercise 8
+        // ps.leapYear();      // executes Exercise 7
+        ps.state();         // executes Exercise 8
         // ps.months();        // executes Exercise 9
         // ps.salary();        // executes Exercise 10
 
@@ -50,7 +50,7 @@ public class ProblemSet3 {
 
     public void sign() {
 		System.out.print("\nEnter an integer: ");
-        int integer = in.nextInt();
+        long integer = in.nextLong();
 		if (integer > 0) {
 		    System.out.println("\nPositive.");
 		} else {
@@ -66,7 +66,7 @@ public class ProblemSet3 {
 
     public void parity() {
 		System.out.print("\nEnter an integer: ");
-        int integer = in.nextInt();
+        long integer = in.nextLong();
 		if (integer % 2 == 0) {
 		    System.out.println("\nEven.");
 		} else {
@@ -83,11 +83,11 @@ public class ProblemSet3 {
     public void ordered() {
 		System.out.print("\nEnter three integers.\n");
 		System.out.print("\nEnter integer: ");
-		int firstInteger = in.nextInt();
+		long firstInteger = in.nextLong();
 		System.out.print("Enter integer: ");
-		int secondInteger = in.nextInt();
+		long secondInteger = in.nextLong();
 		System.out.print("Enter integer: ");
-		int thirdInteger = in.nextInt();
+		long thirdInteger = in.nextLong();
 
 		boolean equivalent = (firstInteger == secondInteger && secondInteger == thirdInteger);
 		boolean strictlyIncreasing = (firstInteger < secondInteger && secondInteger < thirdInteger);
@@ -133,53 +133,54 @@ public class ProblemSet3 {
 		double gpa = 0;
 
 		System.out.print("\nEnter a letter grade: ");
+		in.nextLine();
 		String letterGrade = in.nextLine().toUpperCase();
 
 		if (letterGrade.equals("A") || letterGrade.equals("A+")) {
 			gpa += A_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("A-")) {
 			gpa += B_VALUE;
 			gpa += MINUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("B+")) {
 			gpa += B_VALUE;
 			gpa += PLUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("B")) {
 			gpa += B_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("B-")) {
 			gpa += B_VALUE;
 			gpa += MINUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("C+")) {
 			gpa += C_VALUE;
 			gpa += PLUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("C")) {
 			gpa += C_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("C-")) {
 			gpa += C_VALUE;
 			gpa += MINUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("D+")) {
 			gpa += D_VALUE;
 			gpa += PLUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("D")) {
 			gpa += D_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("D-")) {
 			gpa += D_VALUE;
 			gpa += MINUS_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else if (letterGrade.equals("F")) {
 			gpa += F_VALUE;
-			System.out.printf("\nYour GPA is %.2f.\n\n", gpa);
+			System.out.printf("\nYour GPA is %.2f.\n", gpa);
 		} else {
-			System.out.println("\nThat's not a valid letter grade.\n");
+			System.out.println("\nThat's not a valid letter grade.");
 		}
 	}
 
@@ -233,9 +234,10 @@ public class ProblemSet3 {
 
     public void cards() {
 		System.out.print("\nEnter a card: ");
+		in.nextLine();
 		String cardInput = in.nextLine().toUpperCase();
-		String rank = cardInput.substring(0, 1);
 		String suit = cardInput.substring(1);
+		String rank = cardInput.substring(0, 1);
 		boolean valid = false;
 
 		switch (rank) {
@@ -316,7 +318,7 @@ public class ProblemSet3 {
 			}
 		}
 		if (valid) {
-			System.out.printf("\n%s of %s.\n\n", rank, suit);
+			System.out.printf("\n%s of %s.\n", rank, suit);
 		}
 	}
 
@@ -328,12 +330,12 @@ public class ProblemSet3 {
 
     public void leapYear() {
 		System.out.print("\nEnter a year: ");
-		double year = in.nextDouble();
+		long year = in.nextLong();
 
 		if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-			System.out.printf("\n%.0f is a leap year.\n\n", year);
+			System.out.println("\n" + year + " is a leap year.");
 		} else {
-			System.out.printf("\n%.0f is not a leap year.\n\n", year);
+			System.out.println("\n" + year + " is not a leap year.\n");
 		}
     }
 
@@ -345,8 +347,41 @@ public class ProblemSet3 {
      */
 
     public void state() {
+		final int F_FREEZING_POINT = 32;
+		final int F_BOILING_POINT = 212;
+		final int C_FREEZING_POINT = 0;
+		final int C_BOILING_POINT = 100;
 
-    }
+		System.out.print("\nEnter a temperature: ");
+		double temperature = in.nextDouble();
+		System.out.print("Enter a scale: ");
+		in.nextLine();
+		String tempuratureScale = in.nextLine();
+
+		if (!(tempuratureScale.equals("C")) && !(tempuratureScale.equals("F"))) {
+			System.out.println("\nThat's not a valid scale.");
+		}
+
+		if (tempuratureScale.equals("F")) {
+			if (temperature >= F_BOILING_POINT) {
+				System.out.println("\nGas.\n");
+			} else if (temperature <= F_FREEZING_POINT) {
+				System.out.println("\nSolid.\n");
+			} else if (temperature < F_BOILING_POINT && temperature > F_FREEZING_POINT) {
+				System.out.println("\nLiquid.\n");
+			}
+		}
+
+		if (tempuratureScale.equals("C")) {
+			if (temperature >= C_BOILING_POINT) {
+				System.out.println("\nGas.\n");
+			} else if (temperature <= C_FREEZING_POINT) {
+				System.out.println("\nSolid.\n");
+			} else if (temperature < C_BOILING_POINT && temperature > C_FREEZING_POINT) {
+				System.out.println("\nLiquid.\n");
+			}
+		}
+	}
 
     /*
      * Exercise 9.
