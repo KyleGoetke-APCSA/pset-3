@@ -465,7 +465,7 @@ public class ProblemSet3 {
          final double OT_THRESHOLD = 40;
          final double OT_PAY_MULTIPLIER = 1.5;
 		 double pay;
-         double overtimeHours;
+         double otHours;
 
          System.out.print("\nWage: ");
          double wage = in.nextDouble();
@@ -480,8 +480,8 @@ public class ProblemSet3 {
          }
 
          if (hours > OT_THRESHOLD) {
-             overtimeHours = hours - OT_THRESHOLD;
-             pay = 40 * wage + overtimeHours * OT_PAY_MULTIPLIER * wage;
+             otHours = hours - OT_THRESHOLD;
+             pay = 40 * wage + otHours * OT_PAY_MULTIPLIER * wage;
              System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
          } else {
              pay = hours * wage;
