@@ -31,9 +31,9 @@ public class ProblemSet3 {
         // ps.sign();          // executes Exercise 1
         // ps.parity();        // executes Exercise 2
         // ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
+        // ps.gpa();           // executes Exercise 4
         // ps.grade();         // executes Exercise 5
-        // ps.cards();         // executes Exercise 6
+        ps.cards();         // executes Exercise 6
         // ps.leapYear();      // executes Exercise 7
         // ps.state();         // executes Exercise 8
         // ps.months();        // executes Exercise 9
@@ -232,8 +232,93 @@ public class ProblemSet3 {
      */
 
     public void cards() {
+		System.out.print("\nEnter a card: ");
+		String cardInput = in.nextLine().toUpperCase();
+		String rank = cardInput.substring(0, 1);
+		String suit = cardInput.substring(1);
+		boolean valid = false;
 
-    }
+		switch (rank) {
+			case "2":
+				rank = "Two";
+				valid = true;
+				break;
+			case "3":
+				rank = "Three";
+				valid = true;
+				break;
+			case "4":
+				rank = "Four";
+				valid = true;
+				break;
+			case "5":
+				rank = "Five";
+				valid = true;
+				break;
+			case "6":
+				rank = "Six";
+				valid = true;
+				break;
+			case "7":
+				rank = "Seven";
+				valid = true;
+				break;
+			case "8":
+				rank = "Eight";
+				valid = true;
+				break;
+			case "9":
+				rank = "Nine";
+				valid = true;
+				break;
+			case "T":
+				rank = "Ten";
+				valid = true;
+				break;
+			case "J":
+				rank = "Jack";
+				valid = true;
+				break;
+			case "Q":
+				rank = "Queen";
+				valid = true;
+				break;
+			case "K":
+				rank = "King";
+				valid = true;
+				break;
+			case "A":
+				rank = "Ace";
+				valid = true;
+				break;
+			default:
+				System.out.println("\nThat's not a valid rank.\n");
+				valid = false;
+		}
+
+		if (valid) {
+			switch (suit) {
+				case "C":
+					suit = "Clubs";
+					break;
+				case "D":
+					suit = "Diamonds";
+					break;
+				case "H":
+					suit = "Hearts";
+					break;
+				case "S":
+					suit = "Spades";
+					break;
+				default:
+					System.out.println("\nThat's not a valid suit.\n");
+					valid = false;
+			}
+		}
+		if (valid) {
+			System.out.printf("\n%s of %s.\n\n", rank, suit);
+		}
+	}
 
     /*
      * Exercise 7.
